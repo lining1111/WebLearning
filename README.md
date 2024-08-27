@@ -13,6 +13,11 @@
     细节总是一些幅度较小的高频分量，被忽略了。但是再好的数字音乐也比不上黑胶。
     时间总是有限了，在收益回报率上，总要有取舍。
 
+    https://developer.mozilla.org/zh-CN/docs/Web
+
+    css3 样式参考网站
+    https://csscoco.com/inspiration/#/
+
 ## html
     标签的组成：元素(element)、属性(attribute)、值(value)
     元素就像描述网页不同部分的小标签一样：这是一个标题，那是一个段落，而那一组链接是一个导航
@@ -129,4 +134,68 @@
     为了指出目标元素，选择器可以使用这五个标准的任意组合。在大多数情况下，只使用一个或两个标准即可。
     另外，如果要对几组不同的元素应用相同的样式规则，可以将相同的声明同时应用于几个选择器
 
-    
+    ch11是一个css的集中使用，需要细细看
+    构建页面
+    1、恰当地使用 article、aside、nav、section、header、footer 和 div 等元素将页面划分成不同的逻辑区块
+    2、按照一定的顺序放置内容，确保页面在不使用 CSS 的情况下也是合理的
+    3、以一致的方式使用标题元素（h1 ～h6），从而明确地标识页面上这些区块的信息，并对它们按优先级排序
+    4、使用合适的语义标记剩余的内容，如段落、图和列表
+    5、如果有必要，使用注释来标识页面上不同的区域及其内容
+
+    @font-face规则
+    @font-face {
+        font-family: 'MyFont';
+        src: url('myfont.woff2') format('woff2'),
+             url('myfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    使用web字体为普通文本设置字体样式的步骤：
+    1、选择一个字体，并下载它，在常规文本版本的子文件夹，打开styles.css文件
+    2、将为常规文本准备的@font-face规则添加到自己的样式表内
+    3、将字体文件从文件夹内复制到自己的样式表的文件夹内
+    4、对font-family值进行重命名，让该名称成为字体的代号
+    5、使用熟悉的方式，创建为文本元素添加样式的规则。在样式规则中输入font-family: 'MyFont'，其中MyFont是字体代号
+
+    增强样式
+    为元素创建圆角 border-radius
+    为文本添加阴影 text-shadow
+    为元素添加边框 box-shadow
+    为元素应用多重背景 background-color、background-image、background-repeat、background-position、background-size
+    为元素添加渐变背景 background linear-gradient、radial-gradient
+    为元素添加不透明度 opacity
+    生成内容的效果 content :before、:after
+    将多个图像拼合成单个背景图像 sprite
+    为元素添加动画 animation
+
+    css 出现问题常用排除方法
+    在 CSS 中，如果不确定问题是出在属性上还是出在选择器上，可以试着在选择器上添加极其简单的声明，
+    如 color:red;、border: 1px solid red; 等（如果 red 已经用于网页的设计，也可以选择一种不常见的颜色，如 pink）。
+    如果元素变成红色，那么问题就出在属性上，否则问题就出在选择器上（假定不存在另一个特殊性更强的选择器，也不存在比当前选择器更靠后的选择器）
+
+## html表单
+    目的是为了和访问者交流
+    表单有两个基本组成部分：
+    1、访问者在页面上可以看见并填写的控件、标签和按钮的集合；
+    2、以及用于获取信息并将其转化为可以读取或计算的格式的处理脚本
+
+    每个表单都以 form 开始标签开始，以form 结束标签结束。两个标签之间是组成表单的说明标签、控件和按钮
+    <form action="script.url" method="post"></form>
+    action属性定义了提交表单时，要运行的脚本在服务器上的位置
+    method属性定义了发送数据的HTTP方法
+
+    如果表单上有很多信息需要填写，可以使用 fieldset 元素将相关的元素组合在一起，使表单更容易理解。
+    对表单元素进行组织的步骤:
+    1、在 form 开始标签的下面、任何希望包含在第一个组的表单元素的上面，输入<fieldset>
+    2、如果需要，输入 <legend>。（如果需要包含 legend，它必须是 fieldset 里的第一个元素。）
+    3、输入标签的文本
+    4、输入 </legend> 以完成标签
+    5、如果不使用 legend，则创建一个标题从而可以识别属于该 fieldset 的一组控件
+    6、创建属于第一组的表单元素
+    7、输入 </fieldset> 以完成 fieldset
+    8、如果需要，创建第二个 fieldset，并重复步骤 1 至 7
+
+    input 元素
+    type属性定义了 input 元素的类型
+    name属性定义了 input 元素的名称，服务器端的脚本使用你指定的 name 获取访问者在文本框中输入的值或预设的值（即 value 属性值）
+    value属性定义了 input 元素的值，它定义了在文本框中显示的文本或预设的文本
