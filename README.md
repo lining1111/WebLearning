@@ -1,7 +1,7 @@
 # 前端学习
 
 ## 目的
-    跟随网上教程 https://www.htmlcssvqs.com/8ed/examples/ 先学习 html css js 基础，然后学习VUE，完成自己web的学习
+    跟随网上教程 https://www.htmlcssvqs.com/8ed/examples/ 先学习 html css 基础，然后学习VUE，完成自己web的学习
     后端的话，依据自己擅长的语言用go来实现，虽然与主流的java不太相符，但是从部署环境来看，主要的工作环境是嵌入式服务器，
     将来，应该是有优势，希望golang能在亲爹谷歌的扶持下，生态越来越好吧
 
@@ -18,7 +18,11 @@
     css3 样式参考网站
     https://csscoco.com/inspiration/#/
 
+    要学习vue地先具备html/css/js的基础，然后学习vue
+
 ## html
+    
+    https://www.htmlcssvqs.com/8ed/examples/
     标签的组成：元素(element)、属性(attribute)、值(value)
     元素就像描述网页不同部分的小标签一样：这是一个标题，那是一个段落，而那一组链接是一个导航
     ---1 一般元素由开始标签、内容、结束标签组成
@@ -30,7 +34,37 @@
     h5 标签大全
     可以在 https://www.w3school.com.cn/tags/tag_html.asp 搜索查看
 
-    css 样式表
+    表单 form
+    目的是为了和访问者交流
+    表单有两个基本组成部分：
+    1、访问者在页面上可以看见并填写的控件、标签和按钮的集合；
+    2、以及用于获取信息并将其转化为可以读取或计算的格式的处理脚本
+
+    每个表单都以 form 开始标签开始，以form 结束标签结束。两个标签之间是组成表单的说明标签、控件和按钮
+    <form action="script.url" method="post"></form>
+    action属性定义了提交表单时，要运行的脚本在服务器上的位置
+    method属性定义了发送数据的HTTP方法
+
+    如果表单上有很多信息需要填写，可以使用 fieldset 元素将相关的元素组合在一起，使表单更容易理解。
+    对表单元素进行组织的步骤:
+    1、在 form 开始标签的下面、任何希望包含在第一个组的表单元素的上面，输入<fieldset>
+    2、如果需要，输入 <legend>。（如果需要包含 legend，它必须是 fieldset 里的第一个元素。）
+    3、输入标签的文本
+    4、输入 </legend> 以完成标签
+    5、如果不使用 legend，则创建一个标题从而可以识别属于该 fieldset 的一组控件
+    6、创建属于第一组的表单元素
+    7、输入 </fieldset> 以完成 fieldset
+    8、如果需要，创建第二个 fieldset，并重复步骤 1 至 7
+
+    input 元素
+    type属性定义了 input 元素的类型
+    name属性定义了 input 元素的名称，服务器端的脚本使用你指定的 name 获取访问者在文本框中输入的值或预设的值（即 value 属性值）
+    value属性定义了 input 元素的值，它定义了在文本框中显示的文本或预设的文本
+
+## css 
+
+    https://www.htmlcssvqs.com/8ed/examples/
+    样式表
     元素区域
 
     margin:外边距
@@ -173,29 +207,51 @@
     如 color:red;、border: 1px solid red; 等（如果 red 已经用于网页的设计，也可以选择一种不常见的颜色，如 pink）。
     如果元素变成红色，那么问题就出在属性上，否则问题就出在选择器上（假定不存在另一个特殊性更强的选择器，也不存在比当前选择器更靠后的选择器）
 
-## html表单
-    目的是为了和访问者交流
-    表单有两个基本组成部分：
-    1、访问者在页面上可以看见并填写的控件、标签和按钮的集合；
-    2、以及用于获取信息并将其转化为可以读取或计算的格式的处理脚本
+## js
 
-    每个表单都以 form 开始标签开始，以form 结束标签结束。两个标签之间是组成表单的说明标签、控件和按钮
-    <form action="script.url" method="post"></form>
-    action属性定义了提交表单时，要运行的脚本在服务器上的位置
-    method属性定义了发送数据的HTTP方法
+    http://www.javascriptworld.com/
+    JavaScript 是一种客户端语言。① 也就是说，设计它的目的是在用户的机器上而不是服务器上执行
+    任务。因此，JavaScript 有一些固有的限制，这些限制主要出于如下安全原因。
+    1、JavaScript 不允许写服务器机器上的文件。尽管写服务器上的文件在许多方面是很方便的（比
+        如存储页面单击数或用户填写的表单数据），但是 JavaScript 不允许这么做。而是需要用服务器
+        上的一个程序处理和存储这些数据。这个程序可以是用 Java、Perl 或 PHP 等语言编写的 CGI
+        （运行在服务器上的程序）。
+    2、JavaScript 不能关闭不是由它自己打开的窗口。这是为了避免一个站点关闭其他任何站点的窗
+        口，从而独占浏览器。
+    3、JavaScript 不能从来自另一个服务器的已经打开的网页中读取信息。换句话说，网页不能读取
+        已经打开的其他窗口中的信息，因此无法探察访问这个站点的冲浪者还在访问其他哪些站点。
 
-    如果表单上有很多信息需要填写，可以使用 fieldset 元素将相关的元素组合在一起，使表单更容易理解。
-    对表单元素进行组织的步骤:
-    1、在 form 开始标签的下面、任何希望包含在第一个组的表单元素的上面，输入<fieldset>
-    2、如果需要，输入 <legend>。（如果需要包含 legend，它必须是 fieldset 里的第一个元素。）
-    3、输入标签的文本
-    4、输入 </legend> 以完成标签
-    5、如果不使用 legend，则创建一个标题从而可以识别属于该 fieldset 的一组控件
-    6、创建属于第一组的表单元素
-    7、输入 </fieldset> 以完成 fieldset
-    8、如果需要，创建第二个 fieldset，并重复步骤 1 至 7
+    Ajax：Asynchronous JavaScript and XML（异步 JavaScript 和 XML）
+    Ajax 是一种创建交互式 Web 应用程序的方式。特点：
+    使用 HTML 和 CSS 控制页面结构和表示方式；
+    使用 DOM 显示和操纵页面；
+    使用浏览器的 XMLHttpRequest 对象在客户机和服务器之间传输数据；
+    使用 XML 作为在客户机和服务器之间传输的数据的格式；
+    最后，使用 JavaScript 动态地显示所有内容并且提供交互功能。
 
-    input 元素
-    type属性定义了 input 元素的类型
-    name属性定义了 input 元素的名称，服务器端的脚本使用你指定的 name 获取访问者在文本框中输入的值或预设的值（即 value 属性值）
-    value属性定义了 input 元素的值，它定义了在文本框中显示的文本或预设的文本
+    类（class）标识出可能会多次使用的元素
+    id 标识出的元素对于文档是唯一的
+    函数（function）是一组执行某一任务的 JavaScript 语句，函数由单词 function 加上函数名组成。函数名后面是圆括号，再后面是左花括号。组成函数内容的语句出现在后面的行上，然后用右花括号结束这个函数
+    带圆括号的函数名意味着正在调用这个函数；
+    如果没有圆括号（就像这里的情况），就是将它赋值给事件处理程序，以便在此事件发生时运行它。
+
+    表单检查与正则表达式
+    https://goregex.cn/
+
+    事件是用户在访问页面时执行的操作。当浏览器探测到一个事件时，比如用鼠标单击或按键，它可以触发与这个事件相关联的 JavaScript 对象，这些对象称为事件处理程序（event handler）
+    evt 对象：当事件发生时，浏览器会自动创建一个对象，这个对象包含有关事件的所有信息。这个对象称为事件对象（event object），在事件处理程序中，它被赋值给变量 evt（或 event）
+
+    Web 术语中，cookie 是一小段信息，当用户第一次访问 Web 服务器时，服务器将这些信息发送给浏览器。
+    这个用户以后每次访问这个 Web 站点时，Web 服务器可以通过 cookie 识别这个用户。
+    远程服务器保存 cookie 的一部分，其中包含关于访问者的信息；浏览器将 cookie 作为纯文本文件保存在计算机硬盘上。
+    cookie 总是包含发送它的服务器的地址。cookie 技术背后的本质是“识别”。可以把它看做 Web上的 Caller ID，只是在形式方面有各种变化
+    cookie 是一个具有特定格式的文本字符串：
+    cookieName=cookieValue; expires= expirationDateGMT; path=URLpath; domain=siteDomain
+    这个字符串的第一部分给 cookie 命名并给它赋值。这是 cookie 中唯一必须有的部分，字符串的其余部分都是可选的。
+    接下来是 cookie 的过期日期（expiration date），当到了这个日期，浏览器会自动删除这个 cookie。
+    过期日期后面是一个 URL 路径，这允许在 cookie 中存储一个 URL。最后，可以在 cookie 中存储一个域值。
+
+    
+## vue
+    
+    一种js框架方式，选择合适且流行的框架，简化界面的构造成本
