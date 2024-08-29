@@ -252,6 +252,87 @@
     过期日期后面是一个 URL 路径，这允许在 cookie 中存储一个 URL。最后，可以在 cookie 中存储一个域值。
 
     
-## vue
+## jQuery
+
+    jQuery 是一个 JavaScript 库，它简化了 HTML 文档遍历、事件处理、动画和 Ajax 交互。
+    通过 jQuery，您可以选取（查询，query） HTML 元素，并对它们执行"操作"（actions）。
+    基础语法： $(selector).action()
+
+### jQuery 选择器
+
+    jQuery 选择器允许您对 HTML 元素组或单个元素进行操作。
+    jQuery 选择器基于元素的 id、类、类型、属性、属性值等"查找"（或选择）HTML 元素。 它基于已经存在的 CSS 选择器，
+    除此之外，它还有一些自定义的选择器。
+    jQuery 中所有选择器都以美元符号开头：$()
+    元素选择器:基于元素名选取元素 $("p")
+    #id选择器:基于元素的 id 属性选取元素  $("#test")
+    .class选择器:通过指定的 class 查找元素。 $(".test")
     
-    一种js框架方式，选择合适且流行的框架，简化界面的构造成本
+### jQuery 事件
+
+    jQuery 是为处理 HTML 事件而设计的。
+    事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。术语由三部分组成：
+    事件名称、命名空间、处理程序函数。
+    事件名称是指要发生的事件，例如 click、dblclick、mousedown 等。
+    命名空间是可选的，用于对事件处理程序进行分组。
+    处理程序函数是当事件发生时执行的函数。
+    事件处理程序在 JavaScript 代码中定义，然后被指定为属性值。
+    事件处理程序属性是方法的
+    常见 DOM 事件：
+    鼠标事件	        键盘事件	    表单事件	文档/窗口事件
+    click	        keypress	submit	load
+    dblclick	    keydown	    change	resize
+    mouseenter	    keyup	    focus	scroll
+    mouseleave	 	blur	    unload
+    hover
+
+    常用的 jQuery 事件方法
+    $(document).ready() 方法允许我们在文档完全加载完后执行函数
+    click() 方法是当按钮点击事件被触发时会调用一个函数
+    dblclick()当双击元素时，会发生 dblclick 事件。
+    mouseenter()当鼠标指针穿过元素时，会发生 mouseenter 事件。
+    mouseleave()当鼠标指针离开元素时，会发生 mouseleave 事件。
+    mousedown()当鼠标按钮被按下时，会发生 mousedown 事件。
+    mouseup()当在元素上放松鼠标按钮时，会发生 mouseup 事件。
+    hover()方法用于模拟光标悬停事件。
+    focus()当元素获得焦点时，会发生 focus 事件。
+    blur()当元素失去焦点时，发生 blur 事件。
+    keypress()当键盘或鼠标事件导致用户输入时，发生 keypress 事件。
+    keydown()当用户按下键盘上的任意键时，发生 keydown 事件。
+    keyup()当用户释放键盘上的键时，发生 keyup 事件。
+
+    jQuery - 链(Chaining)
+    通过 jQuery，可以把动作/方法链接在一起。
+    Chaining 允许我们在一条语句中运行多个 jQuery 方法（在相同的元素上）。
+    jQuery 方法链接,通过 . 来将同一元素的方向按希望的顺序链接起来
+    
+### jQuery DOM 操作
+
+    jQuery 提供一系列与 DOM 相关的方法，这使访问和操作元素和属性变得很容易。
+    三个简单实用的用于 DOM 操作的 jQuery 方法：
+        text() - 设置或返回所选元素的文本内容
+        html() - 设置或返回所选元素的内容（包括 HTML 标签）
+        val() - 设置或返回表单字段的值
+        attr() 方法用于获取属性值。
+    通过 jQuery，可以很容易地添加新元素/内容。
+        append() - 在被选元素的结尾插入内容
+        prepend() - 在被选元素的开头插入内容
+        after() - 在被选元素之后插入内容
+        before() - 在被选元素之前插入内容
+    通过 jQuery，可以很容易地删除已有的 HTML 元素。
+        remove() - 删除被选元素（及其子元素）
+        empty() - 从被选元素中删除子元素
+    通过 jQuery，可以很容易地对 CSS 元素进行操作
+        addClass() - 向被选元素添加一个或多个类
+        removeClass() - 从被选元素删除一个或多个类
+        toggleClass() - 对被选元素进行添加/删除类的切换操作
+        css() - 设置或返回样式属性
+    通过 jQuery，很容易处理元素和浏览器窗口的尺寸。
+        width() - 设置或返回元素的宽度
+        height() - 设置或返回元素的高度
+        innerWidth() - 返回元素的宽度（包括内边距）
+        innerHeight() - 返回元素的高度（包括内边距）
+        outerWidth() - 返回元素的宽度（包括内边距和边框）
+        outerHeight() - 返回元素的高度（包括内边距和边框）
+    
+
