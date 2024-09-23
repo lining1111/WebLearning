@@ -335,4 +335,48 @@
         outerWidth() - 返回元素的宽度（包括内边距和边框）
         outerHeight() - 返回元素的高度（包括内边距和边框）
     
+## vue3
 
+    使用vite脚手架构造
+    .vue .ts        .vue中变化，一般不用重启脚手架。.ts修改后，需要重启脚手架
+    
+    main.ts-----App.vue （根）
+    src为主要工作目录
+    下面
+    components 包含若干的.vue 主要用在html上的标签
+    router 路由器 一般只包含一个index.ts用来统筹全局的路由跳转
+    pages 包含若干.vue 配合router来作路由功能的页面
+    types 一般只包含一个index.ts 规定 interface
+    hooks useXXX.ts 包含若干的函数
+
+### demo
+
+    根据《Go语言+Vue.js商城项目实战》一书，作的整项目实践，原始代码位置
+    https://github.com/xyjw/gin-vue.git
+
+### demo1
+
+    根据B站上尚硅谷的课件，作的
+    https://www.bilibili.com/video/BV1Za4y1r7KE/?spm_id_from=333.999.0.0&vd_source=d5fa5216fd2846a4da58ccfad53b6049
+    作入vue3入门
+
+
+### 组件通信
+
+    props 父给子：通过父.vue中的<子>标签中的 :自定义props=“变量/函数”来实现，变量是完成父给子，而子给父，需要函数来实现
+
+    自定义事件 custom_event  专门用来子传父 有点类似qt的 emit 信号槽
+    
+    mitt 基于三方库的任意组件的通信
+
+    v-model 
+    
+    $attrs 祖给孙 其实也是通过了子组件了，通过:XXX v-bind="$attrs"  defineProps
+
+    $refs $paraent 有点指针的含义
+
+    provide-inject 祖给孙 不打扰子
+
+    pinia
+
+    slot 默认、具名、作用域 v-slot:XXX简写为#XXX
