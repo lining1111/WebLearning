@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="Child2">
+<script setup lang="ts" >
 	import {ref,onUnmounted} from 'vue'
 	import emitter from '@/utils/emitter';
 	// 数据

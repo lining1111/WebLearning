@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="Father">
+<script setup lang="ts">
   import Child from './Child.vue'
   import {ref,reactive,provide} from 'vue'
 

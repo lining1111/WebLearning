@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="Child">
+<script setup lang="ts" >
   import GrandChild from './GrandChild.vue'
 </script>
 

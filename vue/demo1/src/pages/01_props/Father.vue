@@ -15,6 +15,7 @@
 	let toy = ref('')
 	// 方法，通过传递回调函数的方式，将子的变量传递到父
 	function getToy(value:string){
+    console.log("儿子发玩具过来了",value)
 		toy.value = value
 	}
 </script>

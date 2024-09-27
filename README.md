@@ -349,6 +349,82 @@
     types 一般只包含一个index.ts 规定 interface
     hooks useXXX.ts 包含若干的函数
 
+### vue相关属性
+
+    https://blog.csdn.net/qq_74637823/article/details/135445606
+    $props      子组件用来接收父组件传过来的值
+    $attrs      解决隔代传值时中间代不需要该值却要用$props接收的问题
+    $root       用来访问根vue组件实例
+    $parent     父组件
+    $child      子组件
+    $options    vue对象构造函数接收的参数,包含当前vue实例初始化参数
+    $refs       用来引用dom
+    $emit       子传父常用的方法
+
+### 组件通信
+
+#### props
+    父给子：通过父.vue中的<子>标签中的 :自定义props=“变量/函数”来实现，变量是完成父给子，而子给父，需要函数来实现
+
+#### 自定义事件 custom_event
+    子给父 专门用来子传父 有点类似qt的 emit 信号槽 儿子自己定义，父亲调用
+    @Event-Name=“”  采用肉串写法，主要是为了避开vue内置的   
+
+#### mitt 基于三方库的任意组件的通信
+    https://github.com/developit/mitt
+    
+    const emitter = mitt()
+    发送组件
+    <button @click="emitter.emit('send-toy',toy)">玩具给弟弟</button>
+    接收组件
+    // 给emitter绑定send-toy事件
+	emitter.on('send-toy',(value:any)=>{
+		toy.value = value
+	})
+	// 在组件卸载时解绑send-toy事件
+	onUnmounted(()=>{
+		emitter.off('send-toy')
+	})
+
+#### v-model
+    在接收组件的实例上，写v-model:XXX="" XXX是接收控件的props
+    往回传 
+    const emit = defineEmits(['update:ming'])
+     @input="emit('update:ming',(<HTMLInputElement>$event.target).value)"
+
+#### $attrs
+    祖给孙 其实也是通过了子组件了，
+    祖通过:XXX 给子
+    子通过 v-bind="$attrs" 全部给孙
+    孙调用 defineProps
+
+#### $refs $parent
+    有点指针的含义 需要组件上调用
+    defineExpose()将数据操作的权利交出去
+    通过组件实例上加入 ref="" 将实例引入到父
+    <Child1 ref="c1"/>
+    let c1 = ref()
+    c1.value.toy = '小猪佩奇'
+    子操作父
+    <button @click="minusHouse($parent)">干掉父亲的一套房产</button>
+    // 方法
+	function minusHouse(parent:any){
+    // console.log(parent)
+		parent.house -= 1
+	}
+
+#### provide-inject
+    祖给孙 不打扰子 有些类似订阅发布
+    provide('主题',内容)
+    let xxx = inject('主题',内容）
+
+#### pinia
+    https://pinia.vuejs.org/zh/
+
+#### slot 插槽
+    默认、具名、作用域 v-slot:XXX简写为#XXX
+
+
 ### demo
 
     根据《Go语言+Vue.js商城项目实战》一书，作的整项目实践，原始代码位置
@@ -361,22 +437,50 @@
     作入vue3入门
 
 
-### 组件通信
+    ref 与 customRef track trigger
 
-    props 父给子：通过父.vue中的<子>标签中的 :自定义props=“变量/函数”来实现，变量是完成父给子，而子给父，需要函数来实现
+## SimpleBlogCommunity
 
-    自定义事件 custom_event  专门用来子传父 有点类似qt的 emit 信号槽
+    https://github.com/Eliaukle/Simple-Blog-Community.git
+    https://blog.csdn.net/qq_50737715/article/details/127437065?spm=1001.2014.3001.5501
+
+    按照上面一套教程(源码+说明)，通过学习搭建一个博客来完成gin+vue3的全栈练习
+
+## ExchangeApp
+
+    源码地址
+    https://github.com/Slumhee/Web003Gin-01_gingormtutorials
     
-    mitt 基于三方库的任意组件的通信
+    简单说明
+    前端部分将使用TypeScript+Vue+Pinia+ElementPlus, 而后端部分则将采用Go+Gin+Gorm, 我们将快速实现一个用户可以登录注册、完成兑换操作、查看文章、进行点赞的Web应用。
 
-    v-model 
+### frontend
+
+    B站视频地址
+    https://www.bilibili.com/video/BV1c142117Fz?p=1&vd_source=d5fa5216fd2846a4da58ccfad53b6049
+
+
+
+### backend
     
-    $attrs 祖给孙 其实也是通过了子组件了，通过:XXX v-bind="$attrs"  defineProps
+    B站视频地址
+    https://www.bilibili.com/video/BV1BY4UefEkM?p=1&vd_source=d5fa5216fd2846a4da58ccfad53b6049
+    
+    初始化 go 后端工程
+    go mod init ExchangeAppBack
 
-    $refs $paraent 有点指针的含义
+    安装mysql
+    sudo apt install mysql-server mysql-client
+    修改mysql服务和mysql数据库配置
+    https://blog.csdn.net/qq_26164609/article/details/106881079
+    安装第三方的命令行mysql工具mycli
+    https://blog.csdn.net/qq_48290779/article/details/138244224
 
-    provide-inject 祖给孙 不打扰子
+    JWT
+    https://zhuanlan.zhihu.com/p/86937325
 
-    pinia
+    GORM
+    https://gorm.io/zh_CN/docs/
 
-    slot 默认、具名、作用域 v-slot:XXX简写为#XXX
+    Redis
+    https://redis.io/

@@ -15,6 +15,7 @@
 
 	// 方法
 	function minusHouse(parent:any){
+    // console.log(parent)
 		parent.house -= 1
 	}
 
