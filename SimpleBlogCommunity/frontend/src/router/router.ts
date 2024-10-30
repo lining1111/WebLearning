@@ -1,4 +1,13 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
+import Login from "@/views/Login.vue";
+import Register from "@/views/Register.vue";
+import MainFrame from "@/views/MainFrame.vue";
+import Publish from "@/views/Publish.vue";
+import Myself from "@/views/Myself.vue";
+import Others from "@/views/Others.vue";
+import Detail from "@/views/Detail.vue";
+import Update from "@/views/Update.vue";
+
 
 const router = createRouter(
     {
@@ -6,35 +15,35 @@ const router = createRouter(
         routes: [
             {
                 path: "/login",
-                component: () => import("@/views/Login.vue")
+                component: Login
             },
             {
                 path: "/register",
-                component: () => import("@/views/Register.vue")
+                component: Register
             },
             {
                 path: "/",
-                component: () => import("@/views/MainFrame.vue")
+                component: MainFrame
             },
             {
                 path: "/publish",
-                component: () => import("@/views/Publish.vue")
+                component: Publish
             },
             {
                 path: "/myself",
-                component: () => import("@/views/Myself.vue")
+                component: Myself
             },
             {
                 path: "/others",
-                component: () => import("@/views/Others.vue")
+                component: Others
             },
             {
                 path: "/detail",
-                component: () => import("@/views/Detail.vue")
+                component: Detail
             },
             {
                 path: "/update",
-                component: () => import("../views/Update.vue")
+                component: Update
             },
         ]
     }

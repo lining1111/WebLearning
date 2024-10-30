@@ -4,7 +4,7 @@ import App from "./App.vue";
 import naive from "naive-ui"; // 引入ui框架
 import { createDiscreteApi } from "naive-ui"; // 引入createDiscreteApi
 import { createPinia } from "pinia"; // 引入pinia
-import  router  from '@/router'; // 引入路由
+import  router  from '@/router/router'; // 引入路由
 import axios from "axios"; // 引入axios
 import  UserStore  from "@/stores/UserStore" // 引入UserStore
 
