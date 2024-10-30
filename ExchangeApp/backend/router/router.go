@@ -2,8 +2,8 @@ package router
 
 import "C"
 import (
-	"ExchangeAppBack/controllers"
-	"ExchangeAppBack/middlewares"
+	"backend/controllers"
+	"backend/middlewares"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"time"

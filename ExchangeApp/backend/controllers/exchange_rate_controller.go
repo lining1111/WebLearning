@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"ExchangeAppBack/global"
-	"ExchangeAppBack/models"
+	"backend/global"
+	"backend/models"
 	"errors"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"ExchangeAppBack/global"
-	"ExchangeAppBack/models"
+	"backend/global"
+	"backend/models"
 	"encoding/json"
 	"errors"
 	"github.com/gin-gonic/gin"

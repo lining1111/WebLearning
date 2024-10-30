@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"ExchangeAppBack/global"
+	"backend/global"
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis"
 	"net/http"

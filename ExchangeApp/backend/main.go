@@ -1,8 +1,8 @@
 package main
 
 import (
-	"ExchangeAppBack/config"
-	"ExchangeAppBack/router"
+	"backend/config"
+	"backend/router"
 	"context"
 	"fmt"
 	"log"

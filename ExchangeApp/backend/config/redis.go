@@ -1,7 +1,7 @@
 package config
 
 import (
-	"ExchangeAppBack/global"
+	"backend/global"
 	"github.com/go-redis/redis"
 	"log"
 )

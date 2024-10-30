@@ -1,7 +1,7 @@
 package config
 
 import (
-	"ExchangeAppBack/global"
+	"backend/global"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"

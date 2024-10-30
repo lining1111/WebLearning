@@ -1,7 +1,7 @@
 package middlewares
 
 import (
-	"ExchangeAppBack/utils"
+	"backend/utils"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
