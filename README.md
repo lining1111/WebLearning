@@ -443,6 +443,12 @@
 
     ref 与 customRef track trigger
 
+# 1Panel
+
+    https://1panel.cn/
+    https://github.com/1Panel-dev/1Panel
+    后面的两个工程都是受到1panel的启发，出发点也是希望写出现代化的后端管理工程代码
+
 ## ExchangeApp
 
     简单说明
