@@ -52,14 +52,14 @@
           </n-upload>
         </div>
         <div v-else style="width: 230px; margin: 0 auto;">
-          <n-image height="150" width="300" :src=serverUrl+updateArticle.headImage/>
-            <n-button @click="deleteImage" circle style="position: absolute; left: 298px; top: 50px;" color="#383838">
-              <template #icon>
-                <n-icon>
-                  <close/>
-                </n-icon>
-              </template>
-            </n-button>
+          <n-image height="150" width="300" :src=serverUrl+updateArticle.headImage />
+          <n-button @click="deleteImage" circle style="position: absolute; left: 298px; top: 50px;" color="#383838">
+            <template #icon>
+              <n-icon>
+                <close/>
+              </n-icon>
+            </template>
+          </n-button>
         </div>
       </n-card>
 

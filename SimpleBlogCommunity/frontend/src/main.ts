@@ -8,7 +8,7 @@ import  router  from '@/router/router'; // 引入路由
 import axios from "axios"; // 引入axios
 import  UserStore  from "@/stores/UserStore" // 引入UserStore
 
-axios.defaults.baseURL = "http://localhost:8080"; // 服务端地址全局配置
+axios.defaults.baseURL = "http://localhost:8080/api"; // 服务端地址全局配置
 const { message, notification, dialog } = createDiscreteApi(["message", "notification", "dialog"])
 
 

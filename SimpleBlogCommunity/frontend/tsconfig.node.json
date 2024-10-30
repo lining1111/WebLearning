@@ -10,7 +10,6 @@
   "compilerOptions": {
     "composite": true,
     "noImplicitAny": false,
-    "strict": false,
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
 

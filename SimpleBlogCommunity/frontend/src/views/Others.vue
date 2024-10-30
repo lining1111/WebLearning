@@ -6,7 +6,7 @@
 
     <div class="card">
       <div style="position: absolute; left: 40px; bottom: 20px">
-        <n-avatar round :size="120" :src=user.avatarUrl :bordered=true/>
+        <n-avatar round :size="120" :src=user.avatarUrl :bordered=true />
       </div>
       <div style="position: absolute; top: 25px;left: 200px; font-size: 20px;">{{ user.name }}</div>
       <div style="position: absolute; top: 70px;left: 200px;">
