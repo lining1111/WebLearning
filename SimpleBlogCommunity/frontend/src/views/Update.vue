@@ -83,19 +83,21 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {ArchiveOutline as ArchiveIcon, Close, ReturnUpBack, Send} from "@vicons/ionicons5"
 import {inject, onMounted, reactive, ref} from 'vue'
 import RichTextEditor from '@/components/RichTextEditor.vue'
 
 import {useRoute, useRouter} from 'vue-router'
+import type {AxiosInstance} from "axios";
+import type {MessageApiInjection} from "naive-ui/es/message/src/MessageProvider";
 
 const router = useRouter()
 const route = useRoute()
 
-const serverUrl = inject("serverUrl")
-const axios = inject("axios")
-const message = inject("message")
+const serverUrl = inject<string>("serverUrl")
+const axios = inject<AxiosInstance>("axios")
+const message = inject<MessageApiInjection>("message")
 
 const loadOk = ref(false)
 const user = reactive({

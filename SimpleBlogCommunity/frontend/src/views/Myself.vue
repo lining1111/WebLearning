@@ -6,7 +6,7 @@
 
     <div class="card">
       <div style="position: absolute; left: 40px; bottom: 20px">
-        <n-avatar round :size="120" :src=user.avatarUrl :bordered=true />
+        <n-avatar round :size="120" :src=user.avatarUrl :bordered="true"/>
       </div>
       <div style="position: absolute; top: 25px;left: 200px; font-size: 20px;">{{ user.name }}</div>
       <div style="position: absolute; top: 70px;left: 200px;">
@@ -88,14 +88,14 @@
                 <div style="position: absolute; left: 240px; width: 690px;">
                   <text style="font-weight:bold; font-size: 20px;">{{ article.title }}</text>
                   <p>{{ article.content + "..." }}</p>
-                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ article.created_at }}</div>
+                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ article?.created_at }}</div>
                 </div>
               </n-card>
               <n-card v-else @click="toDetail(article)" style="cursor: pointer;" hoverable>
                 <div style="height: 140px; ">
                   <text style="font-weight:bold; font-size: 20px;">{{ article.title }}</text>
                   <p>{{ article.content + "..." }}</p>
-                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ article.created_at }}</div>
+                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ article?.created_at }}</div>
                 </div>
               </n-card>
             </div>
@@ -107,14 +107,14 @@
                 <div style="position: absolute; left: 240px; width: 690px;">
                   <text style="font-weight:bold; font-size: 20px;">{{ col.title }}</text>
                   <p>{{ col.content + "..." }}</p>
-                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ col.created_at }}</div>
+                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ col?.created_at }}</div>
                 </div>
               </n-card>
               <n-card v-else style="cursor: pointer;" hoverable>
                 <div style="height: 140px; ">
                   <text @click="toDetail(col)" style="font-weight:bold; font-size: 20px;">{{ col.title }}</text>
                   <p @click="toDetail(col)">{{ col.content + "..." }}</p>
-                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ col.created_at }}</div>
+                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ col?.created_at }}</div>
                 </div>
               </n-card>
             </div>
@@ -124,7 +124,7 @@
               <n-card>
                 <n-avatar @click="toOtherUser(fol)" round size="large" :src=serverUrl+fol.avatar
                           style="float: left; cursor: pointer;"/>
-                <text style="position: absolute; left: 90px; top: 25px; font-size: 20px;">{{ fol.userName }}</text>
+                <text style="position: absolute; left: 90px; top: 25px; font-size: 20px;">{{ fol?.userName }}</text>
               </n-card>
             </div>
           </n-tab-pane>
@@ -134,19 +134,22 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject, onMounted, reactive, ref} from 'vue'
 import TopBar from '@/components/TopBar.vue'
 import {ArchiveOutline as ArchiveIcon} from "@vicons/ionicons5"
 
 import {useRoute, useRouter} from 'vue-router'
+import type {AxiosInstance} from "axios";
+import type {MessageApiInjection} from "naive-ui/es/message/src/MessageProvider";
+import type {Article} from "@/types/Article";
 
 const router = useRouter()
 const route = useRoute()
 
-const serverUrl = inject("serverUrl")
-const axios = inject("axios")
-const message = inject("message")
+const serverUrl = inject<string>("serverUrl")
+const axios = inject<AxiosInstance>("axios")
+const message = inject<MessageApiInjection>("message")
 const options = reactive([
   {label: "修改头像", key: "avatar"},
   {label: "修改用户名", key: "name"},
@@ -164,7 +167,7 @@ const newAvatar = ref(false)
 const newName = ref("")
 const showAvatarModal = ref(false)
 const showNameModal = ref(false)
-const articles = ref([])
+const articles = ref<Article[]>([])
 const collects = ref([])
 const following = ref([])
 

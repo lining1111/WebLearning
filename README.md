@@ -502,7 +502,8 @@
 ## SimpleBlogCommunity
 
     https://github.com/Eliaukle/Simple-Blog-Community.git
-    https://blog.csdn.net/qq_50737715/article/details/127437065?spm=1001.2014.3001.5501
+    前端 https://blog.csdn.net/qq_50737715/article/details/127516700?spm=1001.2014.3001.5501
+    后端 https://blog.csdn.net/qq_50737715/article/details/127437065?spm=1001.2014.3001.5501
 
     按照上面一套教程(源码+说明)，通过学习搭建一个博客来完成gin+vue3的全栈练习
 

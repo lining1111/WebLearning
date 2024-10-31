@@ -35,15 +35,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject, reactive, ref} from 'vue'
 import {useRoute, useRouter} from 'vue-router'
+import type {AxiosInstance} from "axios";
+import type {MessageApiInjection} from "naive-ui/es/message/src/MessageProvider";
 
 const router = useRouter()
 const route = useRoute()
 
-const axios = inject("axios")
-const message = inject("message")
+const axios = inject<AxiosInstance>("axios")
+const message = inject<MessageApiInjection>("message")
 
 const formRef = ref(null)
 const user = reactive({

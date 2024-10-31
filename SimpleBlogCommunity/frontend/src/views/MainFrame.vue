@@ -52,23 +52,26 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TopBar from '@/components/TopBar.vue'
 import {computed, inject, onMounted, reactive, ref} from 'vue'
 import {Search} from '@vicons/ionicons5'
 
 import {useRoute, useRouter} from 'vue-router'
+import type {AxiosInstance} from "axios";
+import type {MessageApiInjection} from "naive-ui/es/message/src/MessageProvider";
+import type {Article} from "@/types/Article";
 
 const router = useRouter()
 const route = useRoute()
 
-const serverUrl = inject("serverUrl")
-const axios = inject("axios")
-const message = inject("message")
+const serverUrl = inject<string>("serverUrl")
+const axios = inject<AxiosInstance>("axios")
+const message = inject<MessageApiInjection>("message")
 
 const selectedCategory = ref(0)
 const categoryOptions = ref([])
-const articleList = ref([])
+const articleList = ref<Article[]>([])
 const pageInfo = reactive({
   pageNum: 1,
   pageSize: 5,
@@ -89,18 +92,18 @@ const loadArticles = async (pageNum = 0) => {
   }
   let res = await axios.post(`/article/list?keyword=${pageInfo.keyword}&pageNum=${pageInfo.pageNum}&pageSize=${pageInfo.pageSize}&categoryId=${pageInfo.categoryId}`)
   console.log(res)
-  if (res.data.code == 200) {
+  if (res?.data.code == 200) {
     articleList.value = res.data.data.article
   }
   pageInfo.count = res.data.data.count;
-  pageInfo.pageCount = parseInt(pageInfo.count / pageInfo.pageSize) + (pageInfo.count % pageInfo.pageSize > 0 ? 1 : 0)
+  pageInfo.pageCount = pageInfo.count / pageInfo.pageSize + (pageInfo.count % pageInfo.pageSize > 0 ? 1 : 0)
   console.log(pageInfo.pageNum, pageInfo.pageCount, pageInfo.count)
 }
 
 const loadCategories = async () => {
   let res = await axios.get("/category")
   console.log(res)
-  categoryOptions.value = res.data.data.categories.map((item) => {
+  categoryOptions.value = res?.data.data.categories.map((item) => {
     return {
       label: item.name,
       value: item.id
@@ -109,7 +112,7 @@ const loadCategories = async () => {
 }
 
 const categoryName = computed(() => {
-  let selectedOption = categoryOptions.value.find((option) => {
+  let selectedOption:any = categoryOptions.value.find((option:any) => {
     return option.value == selectedCategory.value
   })
   console.log(selectedOption)

@@ -19,13 +19,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import '@wangeditor/editor/dist/css/style.css' // 引入 css
 import {inject, onBeforeUnmount, onMounted, ref, shallowRef} from 'vue'
 import {Editor, Toolbar} from '@wangeditor/editor-for-vue'
 
 // 服务端地址
-const serverUrl = inject("serverUrl")
+const serverUrl = inject<string>("serverUrl")
 
 // 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef();

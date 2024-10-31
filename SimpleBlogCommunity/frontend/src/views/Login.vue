@@ -30,24 +30,26 @@
   </div>
 </template>
 
-<script setup >
+<script setup lang="ts">
 import {inject, reactive, ref} from 'vue'
 import UserStore from '@/stores/UserStore'
 
 import {useRoute, useRouter} from 'vue-router'
+import type {AxiosInstance} from "axios";
+import type {MessageApiInjection} from "naive-ui/es/message/src/MessageProvider";
 
 const router = useRouter()
 const route = useRoute()
 
-const axios = inject("axios")
-const message = inject("message")
+const axios = inject<AxiosInstance>("axios")
+const message = inject<MessageApiInjection>("message")
 const userStore = UserStore()
 
-const formRef = ref(null)
+const formRef = ref()
 const user = reactive({
   phoneNumber: localStorage.getItem("phoneNumber") || route.query.phoneNumber || "",
   password: localStorage.getItem("password") || route.query.password || "",
-  rember: localStorage.getItem("rember") === 1 || false
+  rember: Number(localStorage.getItem("rember")) === 1 || false
 })
 
 let rules = {
@@ -62,7 +64,7 @@ let rules = {
 }
 
 function submit() {
-  formRef.value?.validate((errors) => {
+  formRef.value.validate((errors) => {
     if (errors) {
       message.error("注册失败")
     } else {
@@ -77,21 +79,21 @@ const login = async () => {
     password: user.password
   })
   console.log(res)
-  if (res.data.code === 200) {
+  if (res?.data.code === 200) {
     userStore.token = res.data.data.token
     if (user.rember) {
-      localStorage.setItem("phoneNumber", user.phoneNumber)
-      localStorage.setItem("password", user.password)
-      localStorage.setItem("rember", user.rember ? 1 : 0)
+      localStorage.setItem("phoneNumber", user.phoneNumber as string)
+      localStorage.setItem("password", user.password as string)
+      localStorage.setItem("rember", String(user.rember ? 1 : 0))
     } else {
       localStorage.removeItem("phoneNumber")
       localStorage.removeItem("password")
-      localStorage.setItem("rember", user.rember ? 1 : 0)
+      localStorage.setItem("rember", String(user.rember ? 1 : 0))
     }
     router.push("/")
-    message.success(res.data.msg)
+    message.success(res?.data.msg)
   } else {
-    message.error(res.data.msg)
+    message.error(res?.data.msg)
   }
 }
 

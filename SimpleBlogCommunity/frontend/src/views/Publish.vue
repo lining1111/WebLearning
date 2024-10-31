@@ -52,7 +52,7 @@
           </n-upload>
         </div>
         <div v-else style="width: 230px; margin: 0 auto;">
-          <n-image height="150" width="300" :src=serverUrl+addArticle.headImage />
+          <n-image height="150" width="300" :src="serverUrl+addArticle.headImage" />
           <n-button @click="deleteImage" circle style="position: absolute; left: 298px; top: 50px;" color="#383838">
             <template #icon>
               <n-icon>
@@ -83,19 +83,21 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject, onMounted, reactive, ref} from 'vue'
 import RichTextEditor from '@/components/RichTextEditor.vue'
 import {ArchiveOutline as ArchiveIcon, Close, ReturnUpBack, Send} from "@vicons/ionicons5"
 
 import {useRoute, useRouter} from 'vue-router'
+import type {AxiosInstance} from "axios";
+import type {MessageApiInjection} from "naive-ui/es/message/src/MessageProvider";
 
 const router = useRouter()
 const route = useRoute()
 
-const serverUrl = inject("serverUrl")
-const axios = inject("axios")
-const message = inject("message")
+const serverUrl = inject<string>("serverUrl")
+const axios = inject<AxiosInstance>("axios")
+const message = inject<MessageApiInjection>("message")
 
 const login = ref(false)
 const user = reactive({
