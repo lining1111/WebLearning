@@ -517,10 +517,12 @@
     npm install
     
     安装三方库
-    npm install -D sass-embedded
     npm install @vicons/ionicons5
     npm install @wangeditor/editor-for-vue@next --save
     npm install @wangeditor/editor --save
+    npm i axios
+    npm i naive-ui
+
 
 ### backend
 

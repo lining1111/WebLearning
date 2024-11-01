@@ -136,7 +136,7 @@ const toDetail = (article) => {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .card {
   position: absolute;
   top: 50px;

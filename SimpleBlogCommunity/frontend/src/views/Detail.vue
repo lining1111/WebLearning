@@ -5,7 +5,7 @@
 
   <div class="tabs">
     <n-card>
-      <n-h1>{{ articleInfo?.title }}</n-h1>
+      <n-h1>{{ articleInfo.title }}</n-h1>
       <div style="height: 75px; background-color: #FCFAF7;">
         <n-avatar @click="toOtherUser" round size="medium" :src=userUrl
                   style="position: relative; left: 20px; top: 20px; cursor: pointer;"/>
@@ -37,7 +37,7 @@
         已收藏
       </n-button>
       <div class="article-content">
-        <div v-html="articleInfo?.content"></div>
+        <div v-html="articleInfo.content"></div>
       </div>
     </n-card>
   </div>
@@ -174,7 +174,7 @@ const goback = () => {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .tabs {
   position: absolute;
   top: 75px;

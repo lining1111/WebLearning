@@ -64,9 +64,9 @@ let rules = {
 }
 
 function submit() {
-  formRef.value.validate((errors) => {
+  formRef.value.validate((errors:boolean) => {
     if (errors) {
-      message.error("注册失败")
+      message?.error("注册失败")
     } else {
       login();
     }
@@ -74,7 +74,7 @@ function submit() {
 }
 
 const login = async () => {
-  let res = await axios.post("/login", {
+  let res = await axios?.post("/login", {
     phoneNumber: user.phoneNumber,
     password: user.password
   })
@@ -91,9 +91,9 @@ const login = async () => {
       localStorage.setItem("rember", String(user.rember ? 1 : 0))
     }
     router.push("/")
-    message.success(res?.data.msg)
+    message?.success(res?.data.msg)
   } else {
-    message.error(res?.data.msg)
+    message?.error(res?.data.msg)
   }
 }
 
@@ -103,7 +103,7 @@ const toRegister = () => {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .background {
   .rectangle1 {
     position: absolute;

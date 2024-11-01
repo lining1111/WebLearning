@@ -200,7 +200,7 @@ const toDetail = (article) => {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .card {
   position: absolute;
   top: 100px;
@@ -227,10 +227,6 @@ const toDetail = (article) => {
   border-radius: 5px;
 }
 
-// .head_image {
-//     float: left;
-//     width: 20%;
-// }
 .cardInfo {
   float: right;
   width: 80%;

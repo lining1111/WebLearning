@@ -206,7 +206,7 @@ const goback = () => {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .topbar {
   position: sticky;
   top: 0;

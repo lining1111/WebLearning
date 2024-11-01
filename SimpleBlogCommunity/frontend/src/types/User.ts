@@ -3,3 +3,9 @@ export interface User {
     loginId: number | 0;
     avatar: string | '';
 }
+
+export interface UserInfo {
+    id: number | 0
+    avatar: string | ''
+    userName: string | ''
+}

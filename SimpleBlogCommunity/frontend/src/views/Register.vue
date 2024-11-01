@@ -79,7 +79,7 @@ let rules = {
 }
 
 function submit() {
-  formRef.value?.validate((errors) => {
+  formRef.value.validate((errors:boolean) => {
     if (errors) {
       message.error("注册失败")
     } else {
@@ -115,7 +115,7 @@ const toLogin = () => {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .background {
   .rectangle1 {
     position: absolute;

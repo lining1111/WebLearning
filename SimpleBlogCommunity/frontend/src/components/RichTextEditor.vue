@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import '@wangeditor/editor/dist/css/style.css' // 引入 css
 import {inject, onBeforeUnmount, onMounted, ref, shallowRef} from 'vue'
 import {Editor, Toolbar} from '@wangeditor/editor-for-vue'
@@ -90,6 +90,6 @@ const handleChange = (editor) => {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

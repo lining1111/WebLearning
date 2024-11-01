@@ -17,14 +17,16 @@
 <script setup lang="ts">
 import {inject, onMounted, reactive, ref} from 'vue'
 
-import {useRoute, useRouter} from 'vue-router'
+import {useRouter} from 'vue-router'
+import type {AxiosInstance} from "axios";
+import type {MessageApiInjection} from "naive-ui/es/message/src/MessageProvider";
 
 const router = useRouter()
-const route = useRoute()
+// const route = useRoute()
 
-const serverUrl = inject("serverUrl")
-const axios = inject("axios")
-const message = inject("message")
+const serverUrl = inject<string>("serverUrl")
+const axios = inject<AxiosInstance>("axios")
+const message = inject<MessageApiInjection>("message")
 
 const options = reactive([{label: "退出登录", key: "login"}])
 const login = ref(false)
@@ -38,9 +40,9 @@ onMounted(() => {
 })
 
 const loadAvatar = async () => {
-  let res = await axios.get("/user")
+  let res = await axios?.get("/user")
   console.log(res)
-  if (res.data.code == 200) {
+  if (res?.data.code == 200) {
     user.avatarUrl = serverUrl + res.data.data.avatar
     user.id = res.data.data.id
     login.value = true
@@ -66,19 +68,19 @@ const toHome = () => {
 
 const toPublish = () => {
   if (login.value == false) {
-    message.warning("请先登录")
+    message?.warning("请先登录")
   } else {
     router.push("/publish")
   }
 }
 
-const handleSelect = (key) => {
+const handleSelect = (key:any) => {
   router.push("/" + String(key))
 }
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .container {
   .topbar {
     position: sticky;

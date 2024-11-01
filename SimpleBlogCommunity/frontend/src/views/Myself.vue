@@ -88,14 +88,14 @@
                 <div style="position: absolute; left: 240px; width: 690px;">
                   <text style="font-weight:bold; font-size: 20px;">{{ article.title }}</text>
                   <p>{{ article.content + "..." }}</p>
-                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ article?.created_at }}</div>
+                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ article.created_at }}</div>
                 </div>
               </n-card>
               <n-card v-else @click="toDetail(article)" style="cursor: pointer;" hoverable>
                 <div style="height: 140px; ">
                   <text style="font-weight:bold; font-size: 20px;">{{ article.title }}</text>
                   <p>{{ article.content + "..." }}</p>
-                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ article?.created_at }}</div>
+                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ article.created_at }}</div>
                 </div>
               </n-card>
             </div>
@@ -114,7 +114,7 @@
                 <div style="height: 140px; ">
                   <text @click="toDetail(col)" style="font-weight:bold; font-size: 20px;">{{ col.title }}</text>
                   <p @click="toDetail(col)">{{ col.content + "..." }}</p>
-                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ col?.created_at }}</div>
+                  <div style="position: absolute; margin-top: 10px;">发布时间：{{ col.created_at }}</div>
                 </div>
               </n-card>
             </div>
@@ -124,7 +124,7 @@
               <n-card>
                 <n-avatar @click="toOtherUser(fol)" round size="large" :src=serverUrl+fol.avatar
                           style="float: left; cursor: pointer;"/>
-                <text style="position: absolute; left: 90px; top: 25px; font-size: 20px;">{{ fol?.userName }}</text>
+                <text style="position: absolute; left: 90px; top: 25px; font-size: 20px;">{{ fol.userName }}</text>
               </n-card>
             </div>
           </n-tab-pane>
@@ -143,6 +143,8 @@ import {useRoute, useRouter} from 'vue-router'
 import type {AxiosInstance} from "axios";
 import type {MessageApiInjection} from "naive-ui/es/message/src/MessageProvider";
 import type {Article} from "@/types/Article";
+import type {ArticleInfo} from "@/types/ArticleInfo";
+import type {UserInfo} from '@/types/User'
 
 const router = useRouter()
 const route = useRoute()
@@ -168,8 +170,8 @@ const newName = ref("")
 const showAvatarModal = ref(false)
 const showNameModal = ref(false)
 const articles = ref<Article[]>([])
-const collects = ref([])
-const following = ref([])
+const collects = ref<ArticleInfo[]>([])
+const following = ref<UserInfo[]>([])
 
 onMounted(() => {
   loadDetailedInfo()
@@ -192,7 +194,7 @@ const loadDetailedInfo = async () => {
   }
 }
 
-const handleSelect = (key) => {
+const handleSelect = (key:any) => {
   if (String(key) == "avatar") {
     showAvatarModal.value = true
   }
@@ -201,7 +203,7 @@ const handleSelect = (key) => {
   }
 }
 
-const beforeUpload = async (data) => {
+const beforeUpload = async (data:any) => {
   if (data.file.file?.type !== "image/png") {
     message.error("只能上传png格式的图片")
     return false;
@@ -276,7 +278,7 @@ const toDetail = (article) => {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .card {
   position: absolute;
   top: 100px;
@@ -303,10 +305,6 @@ const toDetail = (article) => {
   border-radius: 5px;
 }
 
-// .head_image {
-//     float: left;
-//     width: 20%;
-// }
 .cardInfo {
   float: right;
   width: 80%;
