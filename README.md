@@ -20,9 +20,7 @@
 
     要学习vue地先具备html/css/js的基础，然后学习vue
 
-## base
-
-### html
+## html
     
     https://www.htmlcssvqs.com/8ed/examples/
     标签的组成：元素(element)、属性(attribute)、值(value)
@@ -63,7 +61,7 @@
     name属性定义了 input 元素的名称，服务器端的脚本使用你指定的 name 获取访问者在文本框中输入的值或预设的值（即 value 属性值）
     value属性定义了 input 元素的值，它定义了在文本框中显示的文本或预设的文本
 
-### css 
+## css 
 
     https://www.htmlcssvqs.com/8ed/examples/
     样式表
@@ -209,7 +207,7 @@
     如 color:red;、border: 1px solid red; 等（如果 red 已经用于网页的设计，也可以选择一种不常见的颜色，如 pink）。
     如果元素变成红色，那么问题就出在属性上，否则问题就出在选择器上（假定不存在另一个特殊性更强的选择器，也不存在比当前选择器更靠后的选择器）
 
-### js
+## js
 
     http://www.javascriptworld.com/
     JavaScript 是一种客户端语言。① 也就是说，设计它的目的是在用户的机器上而不是服务器上执行
@@ -254,13 +252,13 @@
     过期日期后面是一个 URL 路径，这允许在 cookie 中存储一个 URL。最后，可以在 cookie 中存储一个域值。
 
     
-### jQuery
+## jQuery
 
     jQuery 是一个 JavaScript 库，它简化了 HTML 文档遍历、事件处理、动画和 Ajax 交互。
     通过 jQuery，您可以选取（查询，query） HTML 元素，并对它们执行"操作"（actions）。
     基础语法： $(selector).action()
 
-#### jQuery 选择器
+### jQuery 选择器
 
     jQuery 选择器允许您对 HTML 元素组或单个元素进行操作。
     jQuery 选择器基于元素的 id、类、类型、属性、属性值等"查找"（或选择）HTML 元素。 它基于已经存在的 CSS 选择器，
@@ -270,7 +268,7 @@
     #id选择器:基于元素的 id 属性选取元素  $("#test")
     .class选择器:通过指定的 class 查找元素。 $(".test")
     
-#### jQuery 事件
+### jQuery 事件
 
     jQuery 是为处理 HTML 事件而设计的。
     事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。术语由三部分组成：
@@ -308,7 +306,7 @@
     Chaining 允许我们在一条语句中运行多个 jQuery 方法（在相同的元素上）。
     jQuery 方法链接,通过 . 来将同一元素的方向按希望的顺序链接起来
     
-#### jQuery DOM 操作
+### jQuery DOM 操作
 
     jQuery 提供一系列与 DOM 相关的方法，这使访问和操作元素和属性变得很容易。
     三个简单实用的用于 DOM 操作的 jQuery 方法：
@@ -337,7 +335,7 @@
         outerWidth() - 返回元素的宽度（包括内边距和边框）
         outerHeight() - 返回元素的高度（包括内边距和边框）
     
-### vue3
+## vue3
 
     使用vite脚手架构造
     .vue .ts        .vue中变化，一般不用重启脚手架。.ts修改后，需要重启脚手架
@@ -351,7 +349,7 @@
     types 一般只包含一个index.ts 规定 interface
     hooks useXXX.ts 包含若干的函数
 
-#### vue相关属性
+### vue相关属性
 
     https://blog.csdn.net/qq_74637823/article/details/135445606
     $props      子组件用来接收父组件传过来的值
@@ -363,16 +361,16 @@
     $refs       用来引用dom
     $emit       子传父常用的方法
 
-#### 组件通信
+### 组件通信
 
-##### props
+#### props
     父给子：通过父.vue中的<子>标签中的 :自定义props=“变量/函数”来实现，变量是完成父给子，而子给父，需要函数来实现
 
-##### 自定义事件 custom_event
+#### 自定义事件 custom_event
     子给父 专门用来子传父 有点类似qt的 emit 信号槽 儿子自己定义，父亲调用
     @Event-Name=“”  采用肉串写法，主要是为了避开vue内置的   
 
-##### mitt 基于三方库的任意组件的通信
+#### mitt 基于三方库的任意组件的通信
     https://github.com/developit/mitt
     
     const emitter = mitt()
@@ -388,19 +386,19 @@
 		emitter.off('send-toy')
 	})
 
-##### v-model
+#### v-model
     在接收组件的实例上，写v-model:XXX="" XXX是接收控件的props
     往回传 
     const emit = defineEmits(['update:ming'])
      @input="emit('update:ming',(<HTMLInputElement>$event.target).value)"
 
-##### $attrs
+#### $attrs
     祖给孙 其实也是通过了子组件了，
     祖通过:XXX 给子
     子通过 v-bind="$attrs" 全部给孙
     孙调用 defineProps
 
-##### $refs $parent
+#### $refs $parent
     有点指针的含义 需要组件上调用
     defineExpose()将数据操作的权利交出去
     通过组件实例上加入 ref="" 将实例引入到父
@@ -415,26 +413,26 @@
 		parent.house -= 1
 	}
 
-##### provide-inject
+#### provide-inject
     祖给孙 不打扰子 有些类似订阅发布
     provide('主题',内容)
     let xxx = inject('主题',内容）
 
-##### pinia
+#### pinia
     https://pinia.vuejs.org/zh/
 
-##### slot 插槽
+#### slot 插槽
     默认、具名、作用域 v-slot:XXX简写为#XXX
 
 
-#### demo
+### demo
 
     新建默认工程
     npm create vue@latest
     npm i
     npm run dev
 
-#### demo1
+### demo1
 
     根据B站上尚硅谷的课件，作的
     https://www.bilibili.com/video/BV1Za4y1r7KE/?spm_id_from=333.999.0.0&vd_source=d5fa5216fd2846a4da58ccfad53b6049
@@ -454,50 +452,7 @@
     简单说明
     前端部分将使用TypeScript+Vue+Pinia+ElementPlus, 而后端部分则将采用Go+Gin+Gorm, 我们将快速实现一个用户可以登录注册、完成兑换操作、查看文章、进行点赞的Web应用。
 
-### frontend
-
-    ---B站视频地址
-    https://www.bilibili.com/video/BV1c142117Fz?p=1&vd_source=d5fa5216fd2846a4da58ccfad53b6049
-    ---代码在
-    https://github.com/Slumhee/Web003Gin-01_gingormtutorials.git
-    Exchangeapp_frontend
-    ---说明在
-    https://github.com/Slumhee/Web002VUE-01_vuebasictutorials.git
-    vue感情参考書(课件).md
-    前端代码说明.md
-
-
-### backend
-    
-    ---B站视频地址
-    https://www.bilibili.com/video/BV1BY4UefEkM?p=1&vd_source=d5fa5216fd2846a4da58ccfad53b6049
-    ---代码在
-    https://github.com/Slumhee/Web003Gin-01_gingormtutorials.git
-    Exchangeapp_backend
-    ---说明在
-    https://github.com/Slumhee/Web003Gin-01_gingormtutorials.git
-    Gin感情参考書(课件).md
-    
-    
-    
-    初始化 go 后端工程
-    go mod init ExchangeAppBack
-
-    安装mysql
-    sudo apt install mysql-server mysql-client
-    修改mysql服务和mysql数据库配置
-    https://blog.csdn.net/qq_26164609/article/details/106881079
-    安装第三方的命令行mysql工具mycli
-    https://blog.csdn.net/qq_48290779/article/details/138244224
-
-    JWT
-    https://zhuanlan.zhihu.com/p/86937325
-
-    GORM
-    https://gorm.io/zh_CN/docs/
-
-    Redis
-    https://redis.io/
+    转移到 https://github.com/lining1111/ExchangeApp.git
 
 ## SimpleBlogCommunity
 
@@ -507,26 +462,4 @@
 
     按照上面一套教程(源码+说明)，通过学习搭建一个博客来完成gin+vue3的全栈练习
 
-### frontend
-    
-    在和frontend同一级目录
-
-    vite新建vue3工程
-    npm create vue@latest
-    cd frontend/
-    npm install
-    
-    安装三方库
-    npm install @vicons/ionicons5
-    npm install @wangeditor/editor-for-vue@next --save
-    npm install @wangeditor/editor --save
-    npm i axios
-    npm i naive-ui
-
-
-### backend
-
-    在backend目录下
-
-    go mod init backend
-    go mod tidy
+    转移到 https://github.com/lining1111/SimpleBlogCommunity.git
