@@ -337,6 +337,14 @@
     
 ## vue3
 
+    vue3 是建立在前端基础编程(html、css、js)之上的，vue3 是一个渐进式框架。在有前端基础编程能力后，学习vue3会更顺利些
+
+    vue文件夹内，demo是基础应用实例；demo1是用路由模拟的组件间通信方式的实例
+
+    !!! vue给标签打ref的作用：比原始html的id更强大，可以切开组件间的id冲突，可以获取到dom元素，也可以获取到组件实例
+        组件实例上加ref，是配合组件中的defineExpose({})来使用的，获取组件的内部数据
+        https://www.bilibili.com/video/BV1Za4y1r7KE?spm_id_from=333.788.videopod.episodes&vd_source=d5fa5216fd2846a4da58ccfad53b6049&p=23
+    
     使用vite脚手架构造
     .vue .ts        .vue中变化，一般不用重启脚手架。.ts修改后，需要重启脚手架
     

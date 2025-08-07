@@ -1,85 +1,39 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import WatchEffect from "@/components/WatchEffect.vue";
+import MyHooks from "@/components/MyHooks.vue";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="app">
+    <!--    试试鲜-->
+    <!--    <Person class="person"/>-->
+    <!--    <Car/>-->
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <!--    toRefs  将响应式的数据中的某个数据拿出来-->
+    <!--    <ToRefs/>-->
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+    <!--    computed 当一个数据是由其他的几种数据组合或者变换而来的时候-->
+    <!--    <Computed/>-->
 
-  <RouterView />
+    <!--    watch 监视数据的状态 xxx变化了，应该怎么办-->
+    <!--    <Watch/>-->
+    <!--    watchEffect 追踪所有数据的变化,用watchEffect会比watch省心很多-->
+    <WatchEffect/>
+    <!--    hook 就是将函数集中在ts文件中，供需要的组件调用-->
+    <MyHooks/>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.app {
+  background-color: gray;
+  box-shadow: 0 0 10px;
+  border-radius: 10px;
+  padding: 20px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.person {
+  width: 200px;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
