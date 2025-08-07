@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18_伸缩盒子模型侧轴</title>
+    <!--
+        传统布局：基于传统盒子模型，基于display+position+float来调整顺序
+        flex布局：在移动设端应用比较广泛。基于伸缩盒子模型
+    -->
+    <style>
+        .outer {
+            width: 1000px;
+            height: 600px;
+            background-color: gray;
+            margin: 0 auto;
+            margin-top: 10px;
+            display: flex;/*将该元素变为伸缩容器，开启flex布局*/
+
+            /*调整主轴方向*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            flex-wrap: wrap;
+            /*主轴起始位置*/
+            justify-content: right;
+
+            align-items: center;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<!--容器和项目-->
+<div class="outer">
+    <div class="inner">1</div>
+    <div class="inner">2</div>
+    <div class="inner">3</div>
+</div>
+
+<div class="outer">
+    <div class="inner">1</div>
+    <div class="inner">2</div>
+    <div class="inner">3</div>
+    <div class="inner">4</div>
+    <div class="inner">5</div>
+    <div class="inner">6</div>
+    <div class="inner">7</div>
+</div>
+
+</body>
+</html>

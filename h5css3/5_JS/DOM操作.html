@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+    <!--
+    DOM:Document Object Model
+        JS通过DOM来操作HTML页面
+    -->
+</head>
+<body>
+
+<div id="mydiv" style="color: skyblue">
+    你好啊
+</div>
+
+</body>
+
+<script>
+
+    // 1.获取DOM对象
+    var mydiv = document.getElementById("mydiv");
+    //打印下这个元素的样式
+    console.log(mydiv.style);
+
+</script>
+</html>

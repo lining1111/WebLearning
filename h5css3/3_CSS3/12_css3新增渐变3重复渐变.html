@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12_css3新增渐变3重复渐变</title>
+    <!--    在没有发生渐变的区域，重新开始渐变，就是重复渐变-->
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            float: left;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        .box1 {
+            background-image: repeating-linear-gradient(red 50px, yellow 100px, green 150px);
+        }
+
+        .box2 {
+            background-image: repeating-radial-gradient(red 50px, yellow 100px, green 150px);
+        }
+
+        .box3 {
+            width: 600px;
+            height: 800px;
+            clear: both;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 20px;
+            background-image: repeating-linear-gradient(transparent 0px, transparent 29px, gray 30px);
+            background-clip: content-box;
+        }
+
+        .box4 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+            /*background-color: gray;*/
+            border-radius: 50%;
+            background-image: radial-gradient(at 80px 80px, white, gray);
+        }
+
+    </style>
+</head>
+<body>
+<!--线性渐变-->
+<div style="overflow: hidden">
+    <div class="box box1">重复渐变-线性渐变</div>
+    <div class="box box2">重复渐变-径向渐变</div>
+</div>
+
+<!--渐变的小案例-->
+<div class="box3"></div>
+<div class="box4"></div>
+</body>
+</html>

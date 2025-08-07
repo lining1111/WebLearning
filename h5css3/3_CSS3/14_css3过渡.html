@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14_css3过渡</title>
+    <style>
+        .boxX {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            transition: 0.5s;
+        }
+
+        .boxX:hover {
+            height: 400px;
+        }
+
+        .outer {
+            width: 1300px;
+            height: 900px;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+
+        .outer:hover .box {
+            width: 1300px;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            transition-duration: 5s;
+            /*!*过渡延迟*!*/
+            /*transition-delay: 2s;*/
+        }
+
+        .box1 {
+            background-color: red;
+            transition-timing-function: ease;
+        }
+
+        .box2 {
+            background-color: orange;
+            transition-timing-function: linear;
+        }
+
+        .box3 {
+            background-color: yellow;
+            transition-timing-function: ease-in;
+        }
+
+        .box4 {
+            background-color: green;
+            transition-timing-function: ease-out;
+        }
+
+        .box5 {
+            background-color: cyan;
+            transition-timing-function: ease-in-out;
+        }
+
+        .box6 {
+            background-color: blue;
+            transition-timing-function: step-start;
+        }
+
+        .box7 {
+            background-color: purple;
+            transition-timing-function: step-end;
+        }
+
+        .box8 {
+            background-color: gray;
+            transition-timing-function: steps(20);
+        }
+
+        .box9 {
+            background-color: lightgray;
+            transition-timing-function: cubic-bezier(0.28, 0.90, 0.77, 0.32); /*https://cubic-bezier.tupulin.com/ 查看效果*/
+        }
+
+        .outer1 {
+            width: 1300px;
+            border: 1px solid black;
+        }
+
+        .inner1 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            transition: 1s 1s linear;
+        }
+
+        .outer1:hover .inner1 {
+            width: 1300px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="boxX">基本使用</div>
+<div class="outer">
+    <div class="box box1">高级使用1平滑(慢、快、慢)</div>
+    <div class="box box2">高级使用2匀速</div>
+    <div class="box box3">高级使用3平滑(慢、快)</div>
+    <div class="box box4">高级使用4平滑(快、慢)</div>
+    <div class="box box5">高级使用5平滑(慢、快、慢)</div>
+    <div class="box box6">高级使用6不考虑过渡的时间直接终点</div>
+    <div class="box box7">高级使用7时间到了直接终点</div>
+    <div class="box box8">高级使用8分多少份到达终点</div>
+    <div class="box box9">高级使用9贝塞尔曲线</div>
+</div>
+
+<div class="outer1">
+    <div class="inner1">过渡符合属性</div>
+</div>
+
+</body>
+</html>

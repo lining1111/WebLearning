@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03_元素浮动后的特点2</title>
+    <!--    元素浮动之后的特点
+        1、元素浮动后是脱离文档流的(坏事)
+        2、宽与高，默认情况下是被内容撑开的
+        3、能够和其他元素共用一行
+        4、margin和padding能够完美设置
+        5、不会像行内块一样当作文本处理，
+
+        浮动后的影响
+        对兄弟元素的影响：后面的兄弟元素，会占据浮动元素之前的位置，在浮动元素的下面。对前面的兄弟无影响
+        对父元素的影响：不能撑开父元素的高度，导致父元素高度塌陷，但父元素的宽度依然束缚浮动的元素
+        怎么解决？
+        1、父元素高度塌陷问题，
+            由于父元素没有高度值，靠子元素撑开，但是现在撑不开了，指定一个高度就行了。(方案1，一般的方案)
+            给父元素也添加 float: ; (方案2,很糟糕的方案)
+            给父元素添加 overflow: hidden; (方案3,一般的方案，后面的兄弟元素不浮动显示有问题)
+            给后面的兄弟元素添加 clear: both; (方案4,较为完美的，后面的元素会换行)，后面的兄弟元素不能有float属性，且是块元素或者行内块元素
+            在父元素增加一个单独的伪元素样式 outer::after{content: "";display: block;clear: both;} (方案5,较为完美的,前面的元素都是带float)
+
+
+            在对浮动上，布局上有一个原则就是，父元素里面的所有子元素要么全浮动，要么都不浮动！！！
+    -->
+    <style>
+        .outer {
+            width: 800px;
+            height: 400px;
+            background-color: gray;
+            padding: 10px;
+        }
+
+        .box {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .box1 {
+            background-color: skyblue;
+        }
+
+        .box2 {
+            background-color: orange;
+            float: left;
+        }
+
+        .box3 {
+            background-color: green;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="box box1">盒子1</div>
+    <div class="box box2">盒子2</div>
+    <div class="box box3">盒子3</div>
+</div>
+</body>
+</html>

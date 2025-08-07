@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20_伸缩盒子模型-伸缩性</title>
+    <style>
+        .outer {
+            width: 1000px;
+            height: 600px;
+            background-color: gray;
+            display: flex; /*将该元素变为伸缩容器，开启flex布局*/
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+            flex-grow: 1; /*伸出的长度占剩余长度的比例*/
+        }
+
+        .inner2 {
+            width: 300px;
+        }
+
+        .outer2 {
+            margin-top: 10px;
+            width: 600px;
+            height: 600px;
+            background-color: gray;
+            display: flex; /*将该元素变为伸缩容器，开启flex布局*/
+        }
+
+        .inner21 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+            flex-shrink: 1; /*伸出的长度占剩余长度的比例*/
+        }
+
+        .inner212 {
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+<!--伸缩性-伸-->
+<div class="outer">
+    <div class="inner">1</div>
+    <div class="inner inner2">2</div>
+    <div class="inner">3</div>
+</div>
+
+<!--伸缩性-缩-->
+<div class="outer2">
+    <div class="inner21 inner211">1</div>
+    <div class="inner21 inner212">2</div>
+    <div class="inner21 inner213">3</div>
+</div>
+</body>
+</html>

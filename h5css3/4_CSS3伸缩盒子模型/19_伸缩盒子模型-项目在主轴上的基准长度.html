@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19_伸缩盒子模型-项目在主轴上的基准长度</title>
+    <!--
+        传统布局：基于传统盒子模型，基于display+position+float来调整顺序
+        flex布局：在移动设端应用比较广泛。基于伸缩盒子模型
+    -->
+    <style>
+        .outer {
+            width: 1000px;
+            height: 600px;
+            background-color: gray;
+            display: flex; /*将该元素变为伸缩容器，开启flex布局*/
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .inner2 {
+            /*设置主轴上基准长度*/
+            flex-basis: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<!--容器和项目-->
+<div class="outer">
+    <div class="inner">1</div>
+    <div class="inner inner2">2</div>
+    <div class="inner">3</div>
+</div>
+
+</body>
+</html>

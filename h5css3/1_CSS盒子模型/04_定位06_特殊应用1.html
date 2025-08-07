@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_定位06_特殊应用1</title>
+    <!-- 定位，在浮动定位的大框架下，对子元素的辅助定位手段
+        在子绝父相条件下，子元素在没有特殊设置宽高的情况下，要撑满父元素的空间，可以使用 left right以及top bottom来撑满父元素的空间
+
+    -->
+    <style>
+        .outer {
+            height: 400px;
+            background-color: gray;
+            position: relative;
+        }
+
+        .inner {
+            background-color: orange;
+            font-size: 20px;
+            padding: 20px;
+            border: 10px solid black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">你好啊</div>
+</div>
+</body>
+</html>

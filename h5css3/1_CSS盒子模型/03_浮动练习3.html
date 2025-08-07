@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03_浮动练习3</title>
+    <!--    画页面真的恶心
+        对于初学者来说,真心恶心,所以采有vue这种模块化的处理方式,将逻辑\样式和html分离,但是同时也带来了不同模块间的数据通信问题,
+        !!!还是那句话,世上无难事,只怕有心人,多练习就好了
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftfix {
+            float: left;
+        }
+
+        .rightfix {
+            float: right;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container {
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        .banner1 {
+            width: 540px;
+            margin: 0 10px;
+        }
+
+        .banner2 {
+            width: 200px;
+        }
+
+        .logo, .banner1, .banner2 {
+            height: 80px;
+            background-color: gray;
+            line-height: 80px;
+        }
+
+        .menu {
+            width: 960px;
+            height: 30px;
+            line-height: 30px;
+            background-color: gray;
+            margin-top: 10px;
+        }
+
+        .content {
+            margin-top: 10px;
+        }
+
+        .item1, .item2 {
+            width: 368px;
+            height: 198px;
+
+            border: black 1px solid;
+            margin-right: 10px;
+            line-height: 198px;
+        }
+
+        .item3, .item4, .item5, .item6 {
+            width: 178px;
+            height: 198px;
+            border: black 1px solid;
+            margin-right: 10px;
+            line-height: 198px;
+        }
+
+        .bottom {
+            margin-top: 10px;
+        }
+
+        .item7, .item8, .item9 {
+            width: 198px;
+            height: 128px;
+            border: black 1px solid;
+        }
+
+        .item8 {
+            margin: 10px 0;
+        }
+
+        .page-footer {
+            height: 60px;
+            margin-top: 10px;
+            background-color: gray;
+            line-height: 60px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!--    头部-->
+    <div class="page-header clearfix">
+        <div class="logo leftfix">logo</div>
+        <div class="banner1 leftfix">banner1</div>
+        <div class="banner2 leftfix">banner2</div>
+    </div>
+    <!--    菜单-->
+    <div class="menu">
+        菜单
+    </div>
+    <!--    内容区-->
+    <div class="content clearfix">
+        <!--        左侧-->
+        <div class="left leftfix">
+            <!--            左上-->
+            <div class="top clearfix">
+                <div class="item1 leftfix">栏目1</div>
+                <div class="item2 leftfix">栏目2</div>
+            </div>
+            <!--            左下-->
+            <div class="bottom clearfix">
+                <div class="item3 leftfix">栏目3</div>
+                <div class="item4 leftfix">栏目4</div>
+                <div class="item5 leftfix">栏目5</div>
+                <div class="item6 leftfix">栏目6</div>
+            </div>
+        </div>
+        <!--        右侧-->
+        <div class="right rightfix">
+            <div class="item7 ">栏目7</div>
+            <div class="item8 ">栏目8</div>
+            <div class="item9 ">栏目9</div>
+        </div>
+    </div>
+    <!--        页脚-->
+    <div class="page-footer">
+        页脚
+    </div>
+
+</div>
+
+</body>
+</html>

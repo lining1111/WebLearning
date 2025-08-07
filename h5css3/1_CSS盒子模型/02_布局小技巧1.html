@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_布局小技巧1</title>
+    <style>
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            overflow: auto;
+        }
+        .inner {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            /*块元素盒子模型,块元素的居中*/
+            margin: 0 auto;
+            margin-top: 150px;
+            /*文本位置调整,行内元素,行内块元素的局中*/
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        inner
+    </div>
+</div>
+</body>
+</html>

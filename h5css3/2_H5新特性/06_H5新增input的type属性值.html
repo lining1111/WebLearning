@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06_H5新增input的type属性值</title>
+    <!--
+        有高级校验
+        email:用于输入邮箱地址的文本框
+        url:用于输入URL地址的文本框
+        number:用于输入数字的文本框
+        无校验,侧重语义化
+        search:用于输入搜索关键字的文本框
+        tel:用于输入电话号码的文本框,在手机上作用
+        无校验，有效果的
+        range:用于输入范围的文本框,需要配合js效果更好
+        color:用于输入颜色的文本框
+        date month week time datetime-local:用于输入日期的文本框
+    -->
+</head>
+<body>
+<form action="">
+    邮箱：<input type="email" name="email" value="">
+    <br>
+    网址：<input type="url" name="address">
+    <br>
+    数值：<input type="number" name="val" step="1" max="1000" min="2">
+    <br>
+    范围选择器：<input type="range" name="range" step="1" max="100" min="0" value="50">
+    <br>
+    颜色选择器：<input type="color" name="color">
+    <br>
+    日期选择器：<input type="date" name="date">
+    <button>提交</button>
+</form>
+</body>
+</html>

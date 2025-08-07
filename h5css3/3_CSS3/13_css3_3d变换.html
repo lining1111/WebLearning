@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13_css3_3d变换</title>
+    <!--
+    元素要有3D效果，必须给它的父元素开启3D空间和景深
+    3D空间和景深
+        transform-style: preserve-3d;  开启3D空间
+        perspective: 800px;  景深，透视效果，单位是像素
+    透视点的位置(观察者位置)
+        perspective-origin: 50% 50%;  透视点位置，默认是元素的中心点，一般不用调
+    背部可见性
+        backface-visibility: hidden; 默认是visible，表示背面可见，hidden表示背面不可见
+    -->
+
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            /*开启3D空间*/
+            transform-style: preserve-3d;
+            /*设置景深,近大远小*/
+            perspective: 500px;
+            /*!*透视点的位置*!*/
+            /*perspective-origin: 100px 100px;*/
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            transform: rotateX(30deg);
+            transform: translateZ(200px);
+            backface-visibility: hidden;
+        }
+
+        /*.test {*/
+        /*    width: 50px;*/
+        /*    height: 100px;*/
+        /*    background-color: orange;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <div class="test">你好啊</div>
+    </div>
+</div>
+</body>
+</html>

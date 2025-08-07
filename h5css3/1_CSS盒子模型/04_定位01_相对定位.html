@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_定位01_相对定位</title>
+    <!-- 定位，在浮动定位的大框架下，对子元素的辅助定位手段
+
+    相对定位：参考位置是自己在父元素原来的位置；不脱离文档流。
+            left和right不一起设置，top和bottom不一起设置
+            如果元素开启定位后，元素的层级比普通元素的高(显示的次序)
+            如果两个元素都开启定位后，后写的压着先写的显示
+            开启定位后，可以开启浮动，但是千万不要这样做。
+
+            应用场景：
+            1、微调元素的位置；
+            2、和绝对定位配合使用；
+    -->
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: yellow;
+            /*开启相对定位*/
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+
+        .box3 {
+            background-color: skyblue;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="outer">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_布局小技巧3</title>
+    <style>
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            /*行内元素,行内块元素可以像文本一样进行位置调整*/
+            text-align: center;
+            line-height: 400px;
+            /*为了非文字的对齐,子元素的文字元素的另外设置字体大小*/
+            font-size: 0;
+        }
+
+        .inner {
+            font-size: 20px;
+            vertical-align: middle;
+            background-color: orange;
+        }
+
+        img {
+            width: 100px;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+<div class="outer">
+    <span class="inner">出来玩啊?</span>
+    <img src="boxModel.png" alt="">
+</div>
+</body>
+</html>

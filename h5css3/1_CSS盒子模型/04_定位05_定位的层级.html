@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_定位05_定位的层级</title>
+    <!-- 定位，在浮动定位的大框架下，对子元素的辅助定位手段
+        每个定位的层级都是一致的，后来的会压着前面的显示；
+        可以通过 z-index 来改变层级，值越大，显示层级越高(屏幕属于计算机图形学，是左手坐标系)
+    -->
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            padding: 10px;
+            position: relative;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: yellow;
+            position: relative;
+            top: -150px;
+            left: 50px;
+        }
+
+        .box3 {
+            background-color: skyblue;
+            position: absolute;
+            top: 120px;
+            left: 120px;
+        }
+
+        .box4 {
+            background-color: green;
+            position: fixed;
+            top: 200px;
+            left: 200px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="outer">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+</div>
+
+</body>
+</html>

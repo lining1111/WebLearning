@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_定位02_绝对定位</title>
+    <!-- 定位,在浮动定位的大框架下，对子元素的辅助定位手段
+
+    绝对定位：参考位置为它的包含块(没脱离文档流，父元素就是包含块；脱离文档流的，第一个开启定位的祖先元素就是包含块)；脱离文档流。
+            绝对定位的元素不能开启浮动
+            绝对定位的元素是定位元素，不能设置宽高的元素就可以设置宽高
+
+            应用场景：
+            1、父元素开启定位，一般开启相对定位。子绝(绝对)父相(相对)；
+            2、一个元素盖到另外一个元素的身上；
+    -->
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            padding: 10px;
+            position: relative;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: yellow;
+            /*开启绝对定位*/
+            position: absolute;
+            left: 10px;
+            top: 210px;
+            /*过渡效果*/
+            transition: 1s all linear;
+        }
+
+        .box3 {
+            background-color: skyblue;
+        }
+
+        /*当鼠标移到outer内时，box2变换下位置*/
+        .outer:hover .box2 {
+            left: 210px;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="outer">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06_H5新增布局标签</title>
+    <!-- 其实就是有了语义的div标签
+        header      头部,整个页面或者部分区域的
+        footer      底部，整个页面或者部分区域的
+        nav         导航栏
+        article     文章、帖子、杂志、新闻、博客、评论等
+        section     页面中的某段文字，或者文章中的某段文字(里面文字通常里面会包含标题)
+        aside       侧边栏
+        -->
+</head>
+<body>
+<!--    头部-->
+<header>
+    <h1>头部</h1>
+</header>
+<hr>
+<!--主导航区-->
+<nav>
+    <a href="#">首页</a>
+    <a href="#">订单</a>
+    <a href="#">购物车</a>
+    <a href="#">我的</a>
+</nav>
+<!-- 主要内容-->
+<div class="page-content">
+    <!--    侧边栏导航-->
+    <aside style="float: right;">
+        <nav>
+            <ul>
+                <li><a href="#">侧边栏导航1</a></li>
+                <li><a href="#">侧边栏导航2</a></li>
+                <li><a href="#">侧边栏导航3</a></li>
+                <li><a href="#">侧边栏导航4</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <!--    文章-->
+    <article>
+        <h1>如何一夜暴富</h1>
+        <section>
+            <h3>做梦</h3>
+            <p>每天晚上都要做梦，梦里都是钱</p>
+        </section>
+        <section>
+            <h3>买彩票</h3>
+            <p>买彩票</p>
+        </section>
+    </article>
+</div>
+<hr>
+<footer>
+    <nav>
+        <a href="#">友情连接1</a>
+        <a href="#">友情连接2</a>
+        <a href="#">友情连接3</a>
+        <a href="#">友情连接4</a>
+    </nav>
+</footer>
+</body>
+</html>

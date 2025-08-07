@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_定位03_固定定位</title>
+    <!-- 定位,在浮动定位的大框架下，对子元素的辅助定位手段
+
+    固定定位：参考位置是视图窗口；脱离文档流。
+            开启固定定位，浮动是不起作用的
+            固定定位的元素是定位元素，不能设置宽高的元素就可以设置宽高
+            应用场景：
+            1、狗皮膏药一样的广告；
+    -->
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: yellow;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .box3 {
+            background-color: skyblue;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="outer">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+</div>
+
+</body>
+</html>

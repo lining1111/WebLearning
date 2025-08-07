@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11_css3新增的文本属性</title>
+    <style>
+        h1 {
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            text-shadow: 3px 3px 5px black;
+        }
+
+        .box1 {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            /*white-space: pre;*/
+            /*white-space: pre-wrap;*/
+            white-space: pre-line;
+        }
+
+        ul {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            font-size: 20px;
+            list-style: none;
+            padding-left: 0;
+            padding: 10px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            white-space: nowrap; /*文本不换行*/
+            overflow: hidden; /*超出部分隐藏*/
+            /*text-overflow: clip;!*文本溢出 截断*!*/
+            text-overflow: ellipsis; /*文本溢出 截断加省略*/
+        }
+
+        h2 {
+            font-size: 100px;
+            /*text-decoration-line: underline ;!*设置下划线*!*/
+            /*text-decoration-style: dashed;*/
+            /*text-decoration-color: red;*/
+            text-decoration: underline dashed red;
+        }
+
+        h3 {
+            font-size: 100px;
+            -webkit-text-stroke: 1px red;
+        }
+
+    </style>
+</head>
+<body>
+<!--文本阴影-->
+<h1>你好啊</h1>
+<br>
+<!--文本换行-->
+<div class="box1">
+    山回路转不见君
+    雪上空留马行处
+    山回路转不见君 山回路转不见君山回路转不见君山回路转不见君山回路转不见君
+    雪上空留马行处
+    山回路转不见君
+    雪上空留马行处
+</div>
+<br>
+<!--文本溢出-->
+<ul>
+    <li>蒙古营社区开展非遗漆扇制作体验活动</li>
+    <li>江苏苏州：直升机坠落事故敲响空中游览安全警钟</li>
+    <li>石家庄福彩首次发布责任彩票报告</li>
+    <li>宗馥莉“首战”输了？并没有！十个关键问题读懂宗氏子女18亿美元“信托纠纷案”</li>
+    <li>父亲家暴纵火烧死母亲，儿子坚持要求判父死刑，本人回应质疑：我也是受害人，复仇内核是对母亲的爱</li>
+    <li>韩国总统又出大事！尹锡悦被法院判赔钱，李在明也逃不了这一劫？</li>
+</ul>
+<br>
+<!--文本修饰-->
+<h2>你好啊，欢迎学习</h2>
+<br>
+<!--文本描边 webkit内核浏览器才支持-->
+<h3>你好啊，欢迎光临</h3>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13_css3_2d变换</title>
+    <style>
+        .outer {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        /*transform 对行内元素不起作用 transform-origin 改变变换的原点*/
+        .inner1 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            transform: translateX(50%);
+        }
+
+        .inner2 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            transform: scaleX(0.5);
+        }
+
+        .inner3 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            transform: rotateZ(45deg);
+        }
+
+        .inner4 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            transform: skewX(45deg);
+        }
+
+    </style>
+
+</head>
+<body>
+<!--    位移 和相对定位相似-->
+<div class="outer">
+    <div class="inner1">位移</div>
+</div>
+
+<!--缩放-->
+<div class="outer">
+    <div class="inner2">缩放</div>
+</div>
+
+<!--旋转-->
+<div class="outer">
+    <div class="inner3">旋转</div>
+</div>
+
+<!--扭曲-->
+<div class="outer">
+    <div class="inner4">扭曲</div>
+</div>
+
+</body>
+</html>
