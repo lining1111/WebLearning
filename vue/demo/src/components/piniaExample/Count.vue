@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import {ref, toRefs} from "vue";
+import {ref} from "vue";
 import {useCountStore} from "@/store/Count";
+import {storeToRefs} from "pinia";
 
 let n = ref(1)
 // let sum = ref(0)
 
 const store = useCountStore()
 
-//两种方式都可以
-// let {sum} = store
-let {sum} = toRefs(store)
-// let sum = toRef(store, 'sum')
+// storeToRefs只会关注store中数据，不会对方法进行ref包裹
+const {sum} = storeToRefs(store)
 console.log('@@', store)
 
 function add() {
