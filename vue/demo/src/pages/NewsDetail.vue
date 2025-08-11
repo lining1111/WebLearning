@@ -1,18 +1,30 @@
 <script setup lang="ts">
 import {useRoute} from "vue-router";
-import {toRefs, watchEffect} from "vue";
+import {toRefs} from "vue";
 
-let {query} = toRefs(useRoute())
-watchEffect(() => {
-  console.log(query.value)
-})
+//query传参
+// let {query} = toRefs(useRoute())
+// params传参
+// let {params} = toRefs(useRoute())
+//props传参
+defineProps(['id', 'title', 'content'])
+
 </script>
 
 <template>
   <ul class="news-list">
-    <li>编号：{{ query.id }}</li>
-    <li>标题：{{ query.title }}</li>
-    <li>内容：{{ query.content }}</li>
+<!--    query传参-->
+    <!--    <li>编号：{{ query.id }}</li>-->
+    <!--    <li>标题：{{ query.title }}</li>-->
+    <!--    <li>内容：{{ query.content }}</li>-->
+<!--    params传参-->
+<!--    <li>编号：{{ params.id }}</li>-->
+<!--    <li>标题：{{ params.title }}</li>-->
+<!--    <li>内容：{{ params.content }}</li>-->
+    <!--    props传参-->
+        <li>编号：{{ id }}</li>
+        <li>标题：{{ title }}</li>
+        <li>内容：{{ content }}</li>
   </ul>
 </template>
 

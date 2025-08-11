@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import {reactive} from "vue";
 import type {Persons} from "@/types";
+import Count from "@/components/piniaExample/Count.vue";
+import LoveTalk from "@/components/piniaExample/LoveTalk.vue";
 
 let personList = reactive<Persons>([
   {id: '1', name: '张三', age: 18},
@@ -38,14 +40,19 @@ let personList = reactive<Persons>([
     <!--    <MyProps :list="personList"/>-->
 
     <!--    路由-->
-    <div class="nav">
-      <router-link to="/home" active-class="active">首页</router-link>
-      <router-link to="/news" active-class="active">新闻</router-link>
-      <router-link :to="{path:'/about'}" active-class="active">关于</router-link>
-    </div>
-    <div class="content">
-      <router-view></router-view>
-    </div>
+    <!--    <div class="nav">-->
+    <!--      <router-link to="/home" active-class="active">首页</router-link>-->
+    <!--      <router-link to="/news" active-class="active">新闻</router-link>-->
+    <!--      <router-link :to="{path:'/about'}" active-class="active">关于</router-link>-->
+    <!--    </div>-->
+    <!--    <div class="content">-->
+    <!--      <router-view></router-view>-->
+    <!--    </div>-->
+
+    <!--    pinia-->
+    <Count/>
+    <br>
+    <LoveTalk/>
 
   </div>
 </template>
