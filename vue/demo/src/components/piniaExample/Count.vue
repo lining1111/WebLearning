@@ -1,0 +1,54 @@
+<script setup lang="ts">
+import {ref, toRefs} from "vue";
+import {useCountStore} from "@/store/Count";
+
+let n = ref(1)
+// let sum = ref(0)
+
+const store = useCountStore()
+
+//两种方式都可以
+// let {sum} = store
+let {sum} = toRefs(store)
+// let sum = toRef(store, 'sum')
+console.log('@@', store)
+
+function add() {
+  sum.value += n.value
+
+  console.log('@@@', sum)
+}
+
+function minus() {
+  sum.value -= n.value
+}
+
+
+</script>
+
+<template>
+  <div class="count">
+    <h2>当前求和为{{ sum }}</h2>
+    <select v-model.number="n">>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <button @click="add">+</button>
+    <button @click="minus">-</button>
+  </div>
+</template>
+
+<style scoped>
+.count {
+  background-color: skyblue;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+select, button {
+  margin: 0 5px;
+  height: 25px;
+}
+
+</style>
