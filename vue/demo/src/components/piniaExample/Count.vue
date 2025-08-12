@@ -9,8 +9,8 @@ let n = ref(1)
 const store = useCountStore()
 
 // storeToRefs只会关注store中数据，不会对方法进行ref包裹
-const {sum} = storeToRefs(store)
-console.log('@@', store)
+const {sum,binSum} = storeToRefs(store)
+console.log('@@', sum)
 
 function add() {
   sum.value += n.value
@@ -22,12 +22,14 @@ function minus() {
   sum.value -= n.value
 }
 
+const val = ref(0)
 
 </script>
 
 <template>
   <div class="count">
-    <h2>当前求和为{{ sum }}</h2>
+    <h2>{{val}}</h2>
+    <h2>当前求和为{{ sum }},放大10倍：{{ binSum}}</h2>
     <select v-model.number="n">>
       <option value="1">1</option>
       <option value="2">2</option>
